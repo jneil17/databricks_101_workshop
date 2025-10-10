@@ -10,6 +10,11 @@
 
 **Data Source:** https://github.com/toUpperCase78/formula1-datasets
 
+## Github layout
+- Images will be stored in the images folder
+- There will be placeholders in the notebooks for now
+- The images file name will be clear for the LLM to know what is being referenced and where it should go
+
 ## 📊 Cell Optimization Summary
 
 Each notebook is designed with a target cell count under 20, prioritizing:
