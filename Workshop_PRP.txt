@@ -10,6 +10,15 @@
 
 **Data Source:** https://github.com/toUpperCase78/formula1-datasets
 
+## 📊 Cell Optimization Summary
+
+Each notebook is designed with a target cell count under 20, prioritizing:
+- **Information density:** Rich markdown cells with visual formatting
+- **Conceptual grouping:** Related operations in single cells
+- **Visual hierarchy:** Using headers and emojis for structure
+- **Strategic breaks:** New cells only at meaningful boundaries
+- **Practical balance:** Readability vs. concise presentation
+
 ## Core Principles
 
 - **Languages:** Python and SQL only (no Scala or R)
@@ -17,7 +26,7 @@
 - **Approach:** SQL-first where appropriate
 - **Patterns:** Use Volumes and COPY INTO (real-world)
 - **Simplicity:** Anyone can follow
-- **20 Cell Limit:** The Databricks AI Agent can only help with cleaning up and coding 20 Cells. So try to keep our notebooks to that size
+- **20 Cell Limit:** Keep all notebooks under 20 cells to maintain clarity and manageability
 
 ---
 
@@ -42,7 +51,7 @@ notebooks/
 
 ## 📓 Notebook Specifications
 
-### 01_Platform_Tour.md
+### 01_Platform_Tour.ipynb
 **Type:** Markdown guide  
 **Content:**
 - Left sidebar navigation (Workspace, Catalog, Compute, Workflows)
@@ -50,6 +59,14 @@ notebooks/
 - ML features overview (Experiments, Models, Feature Store, AutoML)
 - SQL Editor & Analytics intro
 - Screenshot placeholders throughout
+
+**Cell Optimization (Target: 6 cells):**
+1. Title and introduction with learning objectives
+2. Left sidebar navigation features
+3. Data ingestion options overview
+4. ML features explanation
+5. SQL Editor & Analytics introduction
+6. Conclusion and next steps
 
 ### 02_Notebook_Tour.ipynb
 **Type:** Jupyter notebook (CRITICAL - Main Setup)  
@@ -73,6 +90,16 @@ notebooks/
 9. Auto Loader example (streaming ingestion)
 10. Databricks Assistant usage guide
 
+**Cell Optimization (Target: 14-16 cells):**
+1. Introduction and learning objectives
+2-3. Basic Python and SQL demo cells
+4-5. Volume creation and data download
+6-8. Bronze layer table creation and population (3 tables)
+9-11. Silver layer transformations (3 tables)
+12-13. Gold layer analytics (2 tables)
+14. Table operations demonstration
+15. Conclusion and next steps
+
 **Key Requirements:**
 - Proper Jupyter notebook format with markdown and code cells
 - Uses `requests` library for CSV downloads
@@ -80,6 +107,19 @@ notebooks/
 - SQL cells for data transformations
 - Complete medallion architecture (8 tables total)
 - All code must be runnable
+
+### 00_Setup_Data.ipynb
+**Type:** Jupyter notebook
+**Content:**
+- Volume creation
+- Download F1 dataset files
+- Save to volume
+- Verify files exist
+
+**Cell Optimization (Target: 3 cells):**
+1. Introduction markdown
+2. Python code for downloading and verifying data
+3. Next steps guidance
 
 ### 03_Unity_Catalog_Demo.ipynb
 **Type:** Jupyter notebook  
@@ -95,6 +135,17 @@ notebooks/
 - Unity Catalog features overview
 - Best practices for organization and security
 
+**Cell Optimization (Target: 14 cells):**
+1. Introduction with learning objectives
+2-3. Table exploration and discovery
+4. Lineage demo tables explanation
+5-7. Source tables creation (2 tables)
+8-10. Transformation and aggregation tables (3 tables)
+11. Lineage visualization with diagram
+12. Sample query for classification results
+13. Governance features explanation
+14. Conclusion and next steps
+
 ### 04_Job_Creation.ipynb
 **Type:** Jupyter notebook  
 **Content:**
@@ -109,6 +160,14 @@ notebooks/
   - Advanced options
 - Common job patterns (ETL, multi-source, ML)
 - Troubleshooting guide
+
+**Cell Optimization (Target: 10-12 cells):**
+1. Combined markdown introduction with learning objectives
+2. Single SQL cell to create both job tables
+3. One comprehensive Python cell for job execution and logging
+4. Consolidated markdown for job creation steps with screenshots
+5. Single visual guide for different scheduling options
+6. Merged patterns and best practices into one rich markdown cell
 
 ### 05_Delta_Live_Pipeline.ipynb
 **Type:** DLT Jupyter notebook  
@@ -126,7 +185,17 @@ notebooks/
 - DLT vs Jobs comparison
 - Best practices
 
-### 06_AI_Agent_Bricks.md
+**Cell Optimization (Target: 14-16 cells):**
+1. Combined introduction and DLT overview into one rich markdown cell
+2. One Python cell showing all DLT import statements and utilities
+3. Bronze layer ingestion functions in a single cell with clear comments
+4. Consolidated all data quality expectations in one cell
+5. Silver layer transformations in a single comprehensive cell
+6. Gold layer aggregations in one cell with multiple tables
+7. Multi-part pipeline setup guide with ASCII flow diagram
+8. Single markdown cell for features and comparison with Jobs
+
+### 06_AI_Agent_Bricks.ipynb
 **Type:** Markdown guide  
 **Content:**
 - AI Agents overview (what they are, why use them)
@@ -137,6 +206,15 @@ notebooks/
 - Use cases and examples
 - Monitoring and best practices
 - Screenshot placeholders
+
+**Cell Optimization (Target: 8-10 cells):**
+1. Comprehensive introduction with objectives and AI Agent concept
+2. Single rich markdown cell for all key components with visual hierarchy
+3. F1 Q&A bot example with code snippets in one markdown cell
+4. Building steps as a single visual workflow markdown cell
+5. Agent types and capabilities in a consolidated formatted cell
+6. Combined use cases with real-world examples in one cell
+7. Single cell for best practices and monitoring guidance
 
 ### 07_SQL_Editor.sql
 **Type:** SQL file  
@@ -156,7 +234,16 @@ notebooks/
 - Dashboard best practices (layout, performance, design, filters)
 - Advanced SQL features (window functions, CTEs, pivoting)
 
-### 08_Dashboard_Placeholder.md
+**Cell Optimization (Target: 10-12 cells):**
+1. Single comprehensive introduction to SQL analytics
+2. Consolidated SQL Warehouse setup section
+3. Group related queries by theme (e.g., drivers + performance, growth + trends)
+4. Each SQL query includes visualization guidance in comments
+5. Advanced SQL features demonstrated within the main queries
+6. Single dashboard creation guide with visual layout example
+7. Combined best practices for query performance and visualization
+
+### 08_Dashboard_Placeholder.ipynb
 **Type:** Markdown reference  
 **Content:**
 - Dashboard layout specification (4 rows)
@@ -167,7 +254,15 @@ notebooks/
 - Dashboard features (filters, refresh, permissions)
 - Best practices summary
 
-### 09_Genie_Room.md
+**Cell Optimization (Target: 6-8 cells):**
+1. Combined introduction and dashboard purpose in one cell
+2. Single visual dashboard layout specification with row descriptions
+3. Comprehensive visualization guidance with examples in one cell
+4. Dashboard features and interactivity in a consolidated cell
+5. Import and sharing instructions in a single workflow cell
+6. Best practices and performance tips in one formatted cell
+
+### 09_Genie_Room.ipynb
 **Type:** Markdown guide  
 **Content:**
 - Genie overview (natural language analytics)
@@ -184,7 +279,17 @@ notebooks/
 - Genie vs SQL Editor vs Notebooks comparison
 - Limitations and troubleshooting
 
-### 10_Databricks_One.md
+**Cell Optimization (Target: 8-10 cells):**
+1. Single rich introduction with Genie concept and value proposition
+2. Comprehensive Genie Space creation guide in one visual workflow cell
+3. Example questions grouped by complexity in a structured markdown cell
+4. How Genie works with architecture diagram in a consolidated cell
+5. Features and capabilities in one well-formatted cell
+6. Best practices for effective queries combined with teaching tips
+7. Tool comparison table in a single visual cell
+8. Limitations and troubleshooting in one practical guidance cell
+
+### 10_Databricks_One.ipynb
 **Type:** Markdown guide  
 **Content:**
 - Databricks One overview (vs Genie)
@@ -204,6 +309,18 @@ notebooks/
 - Privacy and security
 - Comparison table (One vs Assistant vs Genie)
 - Getting started exercises
+
+**Cell Optimization (Target: 10-12 cells):**
+1. Combined introduction and overview with access methods
+2. Five main capabilities in a single visually structured cell
+3. Usage examples for notebooks consolidated by theme
+4. SQL Editor usage with examples in one comprehensive cell
+5. Best practices for prompts in a single formatted guide
+6. Integration features in one consolidated cell
+7. Example conversations grouped in a single demonstration cell
+8. Advanced features in one structured explanation cell
+9. Privacy/security and tool comparison in a single informational cell
+10. Getting started exercises as a single call-to-action cell
 
 ---
 
@@ -244,6 +361,9 @@ Gold Layer (analytics)
 - **Magic commands:** Use `%sql` and `%md` appropriately
 - **Error handling:** Include where necessary
 - **Comments:** Explain why, not what
+- **Consistency:** Maintain same coding style and patterns across all notebooks
+- **Cell density:** Balance readability with cell count by combining related operations
+- **Visual feedback:** Use print statements with status indicators (✓, ❌) for clear operation status
 
 ### Data Quality
 - All Bronze loads must succeed
@@ -350,18 +470,18 @@ When complete, repository should contain:
 
 ```
 /
-├── README.md
+├── README.ipynb
 ├── notebooks/
-│   ├── 01_Platform_Tour.md
+│   ├── 01_Platform_Tour.ipynb
 │   ├── 02_Notebook_Tour.ipynb
 │   ├── 03_Unity_Catalog_Demo.ipynb
 │   ├── 04_Job_Creation.ipynb
 │   ├── 05_Delta_Live_Pipeline.ipynb
-│   ├── 06_AI_Agent_Bricks.md
+│   ├── 06_AI_Agent_Bricks.ipynb
 │   ├── 07_SQL_Editor.sql
-│   ├── 08_Dashboard_Placeholder.md
-│   ├── 09_Genie_Room.md
-│   └── 10_Databricks_One.md
+│   ├── 08_Dashboard_Placeholder.ipynb
+│   ├── 09_Genie_Room.ipynb
+│   └── 10_Databricks_One.ipynb
 └── .gitignore (optional)
 ```
 
@@ -394,6 +514,64 @@ for optimal experience in Databricks workspace.
 - Keep notebooks simple and educational
 - Remove unnecessary print statements, use comments instead
 - Ensure content is appropriate for the target audience and time constraints
+
+---
+
+## 📝 Best Practices Learned
+
+### 🎨 Notebook Design & Structure
+- **Clear introductions:** Start each notebook with a markdown title, brief description, and learning objectives
+- **Visual organization:** Use emojis and formatting consistently to create visual hierarchy
+- **Progress indicators:** End each notebook with a "Complete" section showing what was learned and next steps
+- **Logical flow:** Structure content as a journey from simple to complex concepts
+- **Clean outputs:** Include verification steps after major operations (e.g., table counts, data samples)
+
+### 💻 Code Quality & Readability
+- **SQL best practices:**
+  - Use proper column aliases with AS for clarity
+  - Include table aliases in multi-table operations
+  - Format complex CASE statements with indentation
+  - Add comments before complex logic blocks
+  - Use CREATE OR REPLACE for idempotent execution
+- **Python best practices:**
+  - Handle exceptions with specific error messages
+  - Use f-strings for readable string formatting
+  - Include status indicators (✓, ❌) for visual feedback
+  - Create utility functions for repeated operations
+  - Use descriptive variable names that explain purpose
+
+### 📊 Data Visualization & Presentation
+- **Rich markdown:** Utilize markdown formatting (headers, lists, code blocks, tables)
+- **ASCII diagrams:** Show data flow with simple text-based diagrams when appropriate
+- **Placeholder conventions:** Consistent format for screenshot placeholders
+- **Verify operations:** Include COUNT, DESCRIBE, or preview queries after data transformations
+- **Sample outputs:** Show example query results to demonstrate value
+
+### 🔄 Data Pipeline Patterns
+- **Simple setup files:** Keep setup notebooks focused on just data preparation
+- **Modular approach:** Separate data acquisition from processing and analytics
+- **Lineage demo:** Create clear parent-child table relationships to showcase governance
+- **Table metadata:** Add descriptive comments to tables for discoverability
+- **Naming conventions:** Use consistent prefixes (bronze_, silver_, gold_) across the medallion
+
+### 🚀 Workshop Delivery
+- **Next steps guidance:** Always include what to do next at the end of each notebook
+- **Time-boxed sections:** Break content into 5-15 minute executable segments
+- **Independent execution:** Ensure notebooks can run standalone when necessary
+- **Consistent formatting:** Maintain the same style across all notebooks
+- **Escalating complexity:** Start simple and build to more complex concepts
+
+### 📏 Cell Optimization Strategies
+- **Combine related markdown:** Merge sequential markdown cells that cover related topics
+- **Multi-step code cells:** Include multiple logical steps in a single code cell when they're closely related
+- **Rich markdown over multiple cells:** Use a single well-formatted markdown cell instead of multiple simple ones
+- **Purposeful comments:** Use in-code comments rather than separate markdown cells for simple explanations
+- **Consolidated SQL:** Combine multiple simple SQL operations into a single comprehensive cell
+- **Focused verification:** Limit verification steps to essential checkpoints, not after every operation
+- **Visual economy:** Use emojis, headers and formatting to convey structure without requiring additional cells
+- **Streamlined introductions:** Combine objectives, overview, and prerequisites into a single rich markdown cell
+- **Comprehensive examples:** Show one thorough example rather than multiple similar ones
+- **Strategic cell breaks:** Only start a new cell when there's a meaningful conceptual boundary
 
 ---
 
