@@ -360,6 +360,33 @@ for optimal experience in Databricks workspace.
 
 ---
 
+## 📋 Notebook Format Requirements
+
+### Proper Jupyter Notebook Structure
+- All notebooks must have proper nbformat fields (nbformat=4, nbformat_minor=5)
+- Must include metadata with kernelspec and language_info sections
+- Structure must follow standard Jupyter format with cell metadata 
+
+### SQL vs Python Usage
+- Use native SQL cells (%sql) for SQL operations rather than spark.sql() in Python
+- Use Python cells for complex logic (file operations, display functions, etc.)
+- Create clear separation between languages based on strengths
+- Maintain readability by using each language for its appropriate use case
+
+### Multi-Language Showcase
+- Demonstrate Databricks' multi-language capabilities
+- Use %sql magic for SQL cells
+- Use %md magic for markdown cells when appropriate
+- Show proper transitions between languages
+
+### Streamlining Content
+- Focus on core concepts rather than complex data engineering
+- Keep notebooks simple and educational
+- Remove unnecessary print statements, use comments instead
+- Ensure content is appropriate for the target audience and time constraints
+
+---
+
 **Status:** Ready for implementation  
 **Next Step:** Create all 10 files according to specifications above  
 **Timeline:** Can be built in parallel, test Notebook 02 first
