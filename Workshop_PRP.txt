@@ -1,0 +1,361 @@
+# Databricks 1.5-Hour Intro Workshop - Project Requirements
+
+## 🎯 Project Overview
+
+**Goal:** Create 10 focused Databricks notebooks/files for a hands-on workshop using Formula 1 data.
+
+**Duration:** 1.5 hours (30 min presentation + 45 min demo + 15 min Q&A)
+
+**Environment:** Databricks trial workspace, `main.default` catalog
+
+**Data Source:** https://github.com/toUpperCase78/formula1-datasets
+
+## Core Principles
+
+- **Languages:** Python and SQL only (no Scala or R)
+- **Structure:** One topic per notebook
+- **Approach:** SQL-first where appropriate
+- **Patterns:** Use Volumes and COPY INTO (real-world)
+- **Simplicity:** Anyone can follow
+
+---
+
+## 📚 Deliverables: 10 Files
+
+```
+notebooks/
+├── 01_Platform_Tour.md              (5 min - navigation guide)
+├── 02_Notebook_Tour.py              (15 min - complete pipeline build)
+├── 03_Unity_Catalog_Demo.py         (5 min - governance & lineage)
+├── 04_Job_Creation.py               (3 min - scheduling workflows)
+├── 05_Delta_Live_Pipeline.py        (5 min - managed ETL)
+├── 06_AI_Agent_Bricks.md            (3 min - AI overview)
+├── 07_SQL_Editor.sql                (10 min - analytics queries)
+├── 08_Dashboard_Placeholder.md      (reference - dashboard template)
+├── 09_Genie_Room.md                 (3 min - natural language queries)
+└── 10_Databricks_One.md             (3 min - platform AI assistant)
+```
+
+---
+
+## 📓 Notebook Specifications
+
+### 01_Platform_Tour.md
+**Type:** Markdown guide  
+**Content:**
+- Left sidebar navigation (Workspace, Catalog, Compute, Workflows)
+- Data ingestion options (Lakehouse Federation, Fivetran, Partner Connect, Custom Scripts)
+- ML features overview (Experiments, Models, Feature Store, AutoML)
+- SQL Editor & Analytics intro
+- Screenshot placeholders throughout
+
+### 02_Notebook_Tour.py
+**Type:** Python notebook (CRITICAL - Main Setup)  
+**Content Structure:**
+1. Serverless compute setup instructions
+2. Multi-language demo (Python + SQL cells)
+3. Create Volume: `main.default.f1_raw_data`
+4. Download 3 CSVs (races, drivers, results) to Volume
+5. **Bronze Layer:** Load CSVs using COPY INTO
+   - `bronze_races`
+   - `bronze_drivers`
+   - `bronze_results`
+6. **Silver Layer:** Clean and validate
+   - `silver_races` (date types, filtering)
+   - `silver_drivers` (full names, date types)
+   - `silver_results` (position cleanup)
+7. **Gold Layer:** Analytics tables
+   - `gold_driver_standings` (aggregated stats)
+   - `gold_season_stats` (yearly metrics)
+8. Table operations demo (TABLE, VIEW, MATERIALIZED VIEW)
+9. Auto Loader example (streaming ingestion)
+10. Databricks Assistant usage guide
+
+**Key Requirements:**
+- Uses `requests` library for CSV downloads
+- COPY INTO pattern for all Bronze loads
+- SQL cells for data transformations
+- Complete medallion architecture (8 tables total)
+- All code must be runnable
+
+### 03_Unity_Catalog_Demo.py
+**Type:** Python notebook  
+**Content:**
+- Unity Catalog overview (3-level namespace, governance)
+- Create 5 lineage demo tables with dependencies:
+  1. `lineage_drivers_source`
+  2. `lineage_results_source`
+  3. `lineage_driver_performance` (joins sources)
+  4. `lineage_career_stats` (aggregates)
+  5. `lineage_championship_tiers` (classifies)
+- Instructions for viewing lineage in Catalog UI
+- Unity Catalog features overview
+- Best practices for organization and security
+
+### 04_Job_Creation.py
+**Type:** Python notebook  
+**Content:**
+- Simple job task: refresh `job_driver_standings_daily`
+- Create `job_run_log` table
+- Log execution with timestamp and status
+- Complete job creation guide:
+  - Navigate to Workflows
+  - Configure job settings
+  - Set schedule (examples)
+  - Notifications setup
+  - Advanced options
+- Common job patterns (ETL, multi-source, ML)
+- Troubleshooting guide
+
+### 05_Delta_Live_Pipeline.py
+**Type:** DLT Python notebook  
+**Content:**
+- DLT decorators and patterns
+- **Bronze:** Ingest drivers and results from Volume
+- **Silver:** Clean with data quality expectations
+  - `@dlt.expect_or_drop` for critical fields
+  - `@dlt.expect` for warnings
+- **Gold:** Aggregated analytics
+  - `dlt_gold_driver_stats`
+  - `dlt_gold_top_performers`
+- DLT pipeline creation guide
+- Features: expectations, dependencies, CDC, streaming
+- DLT vs Jobs comparison
+- Best practices
+
+### 06_AI_Agent_Bricks.md
+**Type:** Markdown guide  
+**Content:**
+- AI Agents overview (what they are, why use them)
+- Key components (Vector Search, Foundation Models, Agent Framework, Playground)
+- Simple F1 Q&A bot example
+- Building steps (prepare data, create index, configure agent, test, deploy)
+- Agent types (SQL, RAG, Function Calling, Multi-Agent)
+- Use cases and examples
+- Monitoring and best practices
+- Screenshot placeholders
+
+### 07_SQL_Editor.sql
+**Type:** SQL file  
+**Content:**
+- SQL Warehouse setup guide
+- **8 analytical queries:**
+  1. Top 10 all-time drivers
+  2. F1 growth over time
+  3. National F1 success
+  4. Driver career tiers
+  5. Recent F1 activity
+  6. Win concentration analysis
+  7. Decade-by-decade comparison
+  8. High-performance drivers
+- Visualization suggestions for each query (chart types)
+- Dashboard creation guide (step-by-step)
+- Dashboard best practices (layout, performance, design, filters)
+- Advanced SQL features (window functions, CTEs, pivoting)
+
+### 08_Dashboard_Placeholder.md
+**Type:** Markdown reference  
+**Content:**
+- Dashboard layout specification (4 rows)
+- KPI cards for Row 1
+- Main visualizations for Rows 2-3
+- Trends for Row 4
+- Import instructions placeholder
+- Dashboard features (filters, refresh, permissions)
+- Best practices summary
+
+### 09_Genie_Room.md
+**Type:** Markdown guide  
+**Content:**
+- Genie overview (natural language analytics)
+- Genie Space creation guide (5 steps)
+- Example questions by category:
+  - Basic queries
+  - Statistical analysis
+  - Trends and patterns
+  - Complex queries
+- How Genie works (flow diagram)
+- Features (conversation history, SQL transparency, visualizations, follow-ups)
+- Best practices for better questions
+- Teaching Genie about your data
+- Genie vs SQL Editor vs Notebooks comparison
+- Limitations and troubleshooting
+
+### 10_Databricks_One.md
+**Type:** Markdown guide  
+**Content:**
+- Databricks One overview (vs Genie)
+- Access methods (keyboard shortcuts, UI button, inline help)
+- **5 main capabilities:**
+  1. Code generation
+  2. Code explanation
+  3. Debugging help
+  4. Best practices guidance
+  5. Documentation lookup
+- Usage in notebooks (4 scenarios)
+- Usage in SQL Editor
+- Best practices for prompts
+- Integration with platform features
+- Example conversations (3 detailed)
+- Advanced features (context awareness, learning mode, multi-turn)
+- Privacy and security
+- Comparison table (One vs Assistant vs Genie)
+- Getting started exercises
+
+---
+
+## 📋 Technical Requirements
+
+### Data Pipeline (Notebook 02)
+```
+Volume Creation
+↓
+Download 3 CSVs from GitHub
+↓
+Bronze Layer (COPY INTO)
+- bronze_races
+- bronze_drivers  
+- bronze_results
+↓
+Silver Layer (cleaned)
+- silver_races
+- silver_drivers
+- silver_results
+↓
+Gold Layer (analytics)
+- gold_driver_standings
+- gold_season_stats
+```
+
+### Code Standards
+- **Python:** PEP 8 style, clear variable names
+- **SQL:** Readable formatting, comments for complex logic
+- **Magic commands:** Use `%sql` and `%md` appropriately
+- **Error handling:** Include where necessary
+- **Comments:** Explain why, not what
+
+### Data Quality
+- All Bronze loads must succeed
+- Silver transformations handle nulls and invalid data
+- Gold tables have proper aggregations
+- Test queries included for validation
+
+---
+
+## 🎯 Success Criteria
+
+### Must Have
+✅ All 10 files created with specified content  
+✅ Notebook 02 builds complete medallion in `main.default`  
+✅ Uses Volume + COPY INTO pattern (not just `spark.read`)  
+✅ Python + SQL only (no Scala/R)  
+✅ All code is executable in fresh trial workspace  
+✅ Clear placeholders for screenshots  
+✅ README with trial signup link and instructions  
+
+### Content Quality
+✅ Simple explanations (non-technical users can follow)  
+✅ Real-world patterns and best practices  
+✅ Working code in every executable notebook  
+✅ Clear progression through topics  
+✅ Troubleshooting guidance included  
+
+### Workshop Flow
+✅ Notebooks numbered 01-10 for clear order  
+✅ Each builds on previous concepts  
+✅ Total runtime under 45 minutes for demo  
+✅ Can be run independently if needed  
+
+---
+
+## 📖 README Requirements
+
+### Sections to Include
+1. **Quick Start** (trial signup + clone steps)
+2. **What You'll Build** (architecture diagram)
+3. **Skills You'll Learn** (bulleted list)
+4. **Workshop Structure** (timing breakdown)
+5. **Prerequisites** (minimal)
+6. **Notebook Table** (all 10 with durations)
+7. **Resources** (links to docs, training, community)
+8. **Troubleshooting** (common issues + solutions)
+9. **Data Source** (GitHub link)
+10. **License** (educational use)
+
+### Key Elements
+- Prominent trial signup link at top
+- 3-step getting started (signup, clone, run)
+- Clear troubleshooting for common issues
+- Links to Databricks resources
+- Professional but friendly tone
+
+---
+
+## 🔧 Implementation Notes
+
+### For Notebook 02 (Critical)
+- Must create Volume first
+- Use `requests.get()` for CSV downloads
+- Write files to `/Volumes/main/default/f1_raw_data/`
+- COPY INTO syntax must be correct for CSV
+- Include FORMAT_OPTIONS and COPY_OPTIONS
+- Verify data loaded with COUNT queries
+- All transformations in SQL cells where possible
+
+### For Screenshot Placeholders
+Use this format consistently:
+```markdown
+**[Screenshot: Description of what will be shown]**
+```
+
+### For Code Blocks in Markdown
+Use triple backticks with language:
+```markdown
+```python
+# Python code
+```
+
+```sql
+-- SQL code
+```
+```
+
+### Testing Checklist
+- [ ] Fresh trial workspace can run Notebook 02 start to finish
+- [ ] All 8 tables created in `main.default`
+- [ ] CSV files download successfully
+- [ ] COPY INTO statements execute without errors
+- [ ] Lineage visible in Catalog UI
+- [ ] SQL queries in 07 return results
+- [ ] DLT notebook has correct decorator syntax
+
+---
+
+## 📦 File Outputs
+
+When complete, repository should contain:
+
+```
+/
+├── README.md
+├── notebooks/
+│   ├── 01_Platform_Tour.md
+│   ├── 02_Notebook_Tour.py
+│   ├── 03_Unity_Catalog_Demo.py
+│   ├── 04_Job_Creation.py
+│   ├── 05_Delta_Live_Pipeline.py
+│   ├── 06_AI_Agent_Bricks.md
+│   ├── 07_SQL_Editor.sql
+│   ├── 08_Dashboard_Placeholder.md
+│   ├── 09_Genie_Room.md
+│   └── 10_Databricks_One.md
+└── .gitignore (optional)
+```
+
+All files should be directly runnable/readable in Databricks workspace.
+
+---
+
+**Status:** Ready for implementation  
+**Next Step:** Create all 10 files according to specifications above  
+**Timeline:** Can be built in parallel, test Notebook 02 first
