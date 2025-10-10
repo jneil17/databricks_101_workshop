@@ -17,6 +17,7 @@
 - **Approach:** SQL-first where appropriate
 - **Patterns:** Use Volumes and COPY INTO (real-world)
 - **Simplicity:** Anyone can follow
+- **20 Cell Limit:** The Databricks AI Agent can only help with cleaning up and coding 20 Cells. So try to keep our notebooks to that size
 
 ---
 
