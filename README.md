@@ -76,10 +76,10 @@ Raw Data (Volume)          Bronze Layer              Silver Layer             Go
 | **#** | **Notebook** | **Duration** | **Focus Area** | **Key Takeaways** |
 |-------|-------------|-------------|---------------|------------------|
 | 01 | [Platform Tour](notebooks/01_Platform_Tour.md) | 5 min | Navigation | Workspace layout, key features |
-| 02 | [Notebook Tour](notebooks/02_Notebook_Tour.py) | 15 min | **Core Setup** | Complete medallion pipeline |
-| 03 | [Unity Catalog Demo](notebooks/03_Unity_Catalog_Demo.py) | 5 min | Governance | Lineage, security, organization |
-| 04 | [Job Creation](notebooks/04_Job_Creation.py) | 3 min | Automation | Scheduling, monitoring workflows |
-| 05 | [Delta Live Pipeline](notebooks/05_Delta_Live_Pipeline.py) | 5 min | Managed ETL | Declarative pipelines, data quality |
+| 02 | [Notebook Tour](notebooks/02_Notebook_Tour.ipynb) | 15 min | **Core Setup** | Complete medallion pipeline |
+| 03 | [Unity Catalog Demo](notebooks/03_Unity_Catalog_Demo.ipynb) | 5 min | Governance | Lineage, security, organization |
+| 04 | [Job Creation](notebooks/04_Job_Creation.ipynb) | 3 min | Automation | Scheduling, monitoring workflows |
+| 05 | [Delta Live Pipeline](notebooks/05_Delta_Live_Pipeline.ipynb) | 5 min | Managed ETL | Declarative pipelines, data quality |
 | 06 | [AI Agent Bricks](notebooks/06_AI_Agent_Bricks.md) | 3 min | AI/ML | Intelligent applications, RAG |
 | 07 | [SQL Editor](notebooks/07_SQL_Editor.sql) | 10 min | Analytics | Interactive queries, visualizations |
 | 08 | [Dashboard Placeholder](notebooks/08_Dashboard_Placeholder.md) | - | Reference | Dashboard templates, best practices |

@@ -24,16 +24,16 @@
 
 ```
 notebooks/
-├── 01_Platform_Tour.md              (5 min - navigation guide)
-├── 02_Notebook_Tour.py              (15 min - complete pipeline build)
-├── 03_Unity_Catalog_Demo.py         (5 min - governance & lineage)
-├── 04_Job_Creation.py               (3 min - scheduling workflows)
-├── 05_Delta_Live_Pipeline.py        (5 min - managed ETL)
-├── 06_AI_Agent_Bricks.md            (3 min - AI overview)
+├── 01_Platform_Tour.ipynb           (5 min - navigation guide - markdown cells only)
+├── 02_Notebook_Tour.ipynb           (15 min - complete pipeline build)
+├── 03_Unity_Catalog_Demo.ipynb      (5 min - governance & lineage)
+├── 04_Job_Creation.ipynb            (3 min - scheduling workflows)
+├── 05_Delta_Live_Pipeline.ipynb     (5 min - managed ETL)
+├── 06_AI_Agent_Bricks.ipynb         (3 min - AI overview - markdown cells only)
 ├── 07_SQL_Editor.sql                (10 min - analytics queries)
-├── 08_Dashboard_Placeholder.md      (reference - dashboard template)
-├── 09_Genie_Room.md                 (3 min - natural language queries)
-└── 10_Databricks_One.md             (3 min - platform AI assistant)
+├── 08_Dashboard_Placeholder.ipynb   (reference - dashboard template - markdown cells only)
+├── 09_Genie_Room.ipynb              (3 min - natural language queries - markdown cells only)
+└── 10_Databricks_One.ipynb          (3 min - platform AI assistant - markdown cells only)
 ```
 
 ---
@@ -49,8 +49,8 @@ notebooks/
 - SQL Editor & Analytics intro
 - Screenshot placeholders throughout
 
-### 02_Notebook_Tour.py
-**Type:** Python notebook (CRITICAL - Main Setup)  
+### 02_Notebook_Tour.ipynb
+**Type:** Jupyter notebook (CRITICAL - Main Setup)  
 **Content Structure:**
 1. Serverless compute setup instructions
 2. Multi-language demo (Python + SQL cells)
@@ -72,14 +72,15 @@ notebooks/
 10. Databricks Assistant usage guide
 
 **Key Requirements:**
+- Proper Jupyter notebook format with markdown and code cells
 - Uses `requests` library for CSV downloads
 - COPY INTO pattern for all Bronze loads
 - SQL cells for data transformations
 - Complete medallion architecture (8 tables total)
 - All code must be runnable
 
-### 03_Unity_Catalog_Demo.py
-**Type:** Python notebook  
+### 03_Unity_Catalog_Demo.ipynb
+**Type:** Jupyter notebook  
 **Content:**
 - Unity Catalog overview (3-level namespace, governance)
 - Create 5 lineage demo tables with dependencies:
@@ -92,8 +93,8 @@ notebooks/
 - Unity Catalog features overview
 - Best practices for organization and security
 
-### 04_Job_Creation.py
-**Type:** Python notebook  
+### 04_Job_Creation.ipynb
+**Type:** Jupyter notebook  
 **Content:**
 - Simple job task: refresh `job_driver_standings_daily`
 - Create `job_run_log` table
@@ -107,8 +108,8 @@ notebooks/
 - Common job patterns (ETL, multi-source, ML)
 - Troubleshooting guide
 
-### 05_Delta_Live_Pipeline.py
-**Type:** DLT Python notebook  
+### 05_Delta_Live_Pipeline.ipynb
+**Type:** DLT Jupyter notebook  
 **Content:**
 - DLT decorators and patterns
 - **Bronze:** Ingest drivers and results from Volume
@@ -294,6 +295,7 @@ Gold Layer (analytics)
 ## 🔧 Implementation Notes
 
 ### For Notebook 02 (Critical)
+- Must use proper Jupyter notebook format (.ipynb)
 - Must create Volume first
 - Use `requests.get()` for CSV downloads
 - Write files to `/Volumes/main/default/f1_raw_data/`
@@ -301,6 +303,7 @@ Gold Layer (analytics)
 - Include FORMAT_OPTIONS and COPY_OPTIONS
 - Verify data loaded with COUNT queries
 - All transformations in SQL cells where possible
+- Proper markdown cells for explanations and structure
 
 ### For Screenshot Placeholders
 Use this format consistently:
@@ -340,10 +343,10 @@ When complete, repository should contain:
 ├── README.md
 ├── notebooks/
 │   ├── 01_Platform_Tour.md
-│   ├── 02_Notebook_Tour.py
-│   ├── 03_Unity_Catalog_Demo.py
-│   ├── 04_Job_Creation.py
-│   ├── 05_Delta_Live_Pipeline.py
+│   ├── 02_Notebook_Tour.ipynb
+│   ├── 03_Unity_Catalog_Demo.ipynb
+│   ├── 04_Job_Creation.ipynb
+│   ├── 05_Delta_Live_Pipeline.ipynb
 │   ├── 06_AI_Agent_Bricks.md
 │   ├── 07_SQL_Editor.sql
 │   ├── 08_Dashboard_Placeholder.md
@@ -352,7 +355,8 @@ When complete, repository should contain:
 └── .gitignore (optional)
 ```
 
-All files should be directly runnable/readable in Databricks workspace.
+All Jupyter notebooks (.ipynb) should be properly formatted with markdown and code cells 
+for optimal experience in Databricks workspace.
 
 ---
 
