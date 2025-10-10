@@ -20,10 +20,11 @@
 
 ---
 
-## 📚 Deliverables: 10 Files
+## 📚 Deliverables: 11 Files
 
 ```
 notebooks/
+├── 00_Setup_Data.ipynb              (5 min - prerequisite data setup)
 ├── 01_Platform_Tour.ipynb           (5 min - navigation guide - markdown cells only)
 ├── 02_Notebook_Tour.ipynb           (15 min - complete pipeline build)
 ├── 03_Unity_Catalog_Demo.ipynb      (5 min - governance & lineage)
@@ -207,12 +208,20 @@ notebooks/
 
 ## 📋 Technical Requirements
 
-### Data Pipeline (Notebook 02)
+### Data Pipeline (Notebooks 00 & 02)
 ```
+Notebook 00: Setup
 Volume Creation
 ↓
 Download 3 CSVs from GitHub
 ↓
+Save to Volume (/Volumes/main/default/f1_raw_data/)
+↓
+Create DLT schema directories
+↓
+Verify data and preview schemas
+
+Notebook 02: Processing
 Bronze Layer (COPY INTO)
 - bronze_races
 - bronze_drivers  
