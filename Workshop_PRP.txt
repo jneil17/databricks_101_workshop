@@ -39,17 +39,18 @@ Each notebook is designed with a target cell count under 20, prioritizing:
 
 ```
 notebooks/
-├── 00_Setup_Data.ipynb              (5 min - prerequisite data setup)
-├── 01_Platform_Tour.ipynb           (5 min - navigation guide - markdown cells only)
-├── 02_Notebook_Tour.ipynb           (15 min - complete pipeline build)
-├── 03_Unity_Catalog_Demo.ipynb      (5 min - governance & lineage)
-├── 04_Job_Creation.ipynb            (3 min - scheduling workflows)
-├── 05_Delta_Live_Pipeline.ipynb     (5 min - managed ETL)
-├── 06_AI_Agent_Bricks.ipynb         (3 min - AI overview - markdown cells only)
-├── 07_SQL_Editor.sql                (10 min - analytics queries)
-├── 08_Dashboard_Placeholder.ipynb   (reference - dashboard template - markdown cells only)
-├── 09_Genie_Room.ipynb              (3 min - natural language queries - markdown cells only)
-└── 10_Databricks_One.ipynb          (3 min - platform AI assistant - markdown cells only)
+├── 00_Setup.ipynb                      (5 min - prerequisite data setup)
+├── 01_Platform_Tour.ipynb              (5 min - navigation guide)
+├── 02_Databricks_Notebook_Tour.ipynb   (5 min - notebook fundamentals)
+├── 03_Medallion Architecture.ipynb     (15 min - complete Bronze→Silver→Gold pipeline)
+├── 04_Unity_Catalog.ipynb              (5 min - governance & lineage)
+├── 05_Job_Creation.ipynb               (3 min - scheduling workflows)
+├── 06_Declarative_Pipeline.ipynb       (5 min - managed ETL)
+├── 07_SQL_Editor.sql                   (10 min - analytics queries)
+├── 08_Formula_1_Dashboard.lvdash.json  (reference - dashboard template)
+├── 09_Genie_Room.ipynb                 (3 min - natural language queries)
+├── 10_Agent_Bricks.ipynb               (3 min - AI overview)
+├── 11_Databricks_One.ipynb             (3 min - business user interface)
 ```
 
 ---

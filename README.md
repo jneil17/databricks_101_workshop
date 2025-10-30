@@ -9,27 +9,24 @@
 ### 3-Step Setup
 1. **Sign up** for Databricks trial (no credit card required)
 2. **Clone** this repository into your workspace
-3. **Run** the notebooks in order (01-10)
+3. **Run** the notebooks in order (00-11)
 
 ---
 
 ## 🏗️ What You'll Build
 
-```
-📊 Formula 1 Data Lakehouse Architecture
+**🏎️ Complete F1 Data Lakehouse Pipeline:**
 
-Raw Data (Volume)          Bronze Layer              Silver Layer             Gold Layer
-┌─────────────────┐       ┌──────────────────┐     ┌─────────────────┐     ┌──────────────────┐
-│  📁 f1_raw_data │  →    │  bronze_races    │  →  │  silver_races   │  →  │ gold_driver_     │
-│  • races.csv    │       │  bronze_drivers  │     │  silver_drivers │     │   standings      │
-│  • drivers.csv  │       │  bronze_results  │     │  silver_results │     │ gold_season_     │
-│  • results.csv  │       └──────────────────┘     └─────────────────┘     │   stats          │
-└─────────────────┘                                                        └──────────────────┘
-        ↑                           ↑                         ↑                       ↑
-    Download CSVs              COPY INTO               Clean & Validate         Analytics Ready
-```
+* **📥 Data Ingestion** - Download F1 CSV files into Databricks Volumes
+* **🥉 Bronze Layer** - Raw race results, driver data, and qualifying times  
+* **🥈 Silver Layer** - Cleaned and validated F1 data with quality checks
+* **🥇 Gold Layer** - Analytics-ready driver standings and team performance metrics
+* **🔄 Automated Jobs** - Scheduled data refreshes and pipeline monitoring
+* **🗄️ Unity Catalog** - Data governance, lineage tracking, and security
+* **📊 Interactive Dashboards** - Visual F1 analytics and race insights
+* **🤖 AI Features** - Natural language queries and intelligent applications
 
-**Plus:** Unity Catalog lineage, scheduled jobs, Delta Live Tables, AI agents, and interactive dashboards!
+**All built using real Formula 1 data from 1950-2023 seasons!**
 
 ---
 
@@ -49,7 +46,7 @@ Raw Data (Volume)          Bronze Layer              Silver Layer             Go
 
 ### Advanced Features
 - ✅ Unity Catalog for governance and lineage tracking
-- ✅ Delta Live Tables for managed ETL pipelines
+- ✅ Declarative Pipelines for managed ETL pipelines
 - ✅ SQL Editor for analytics and visualization
 - ✅ AI-powered features (Genie, Databricks Assistant)
 
@@ -75,18 +72,20 @@ Raw Data (Volume)          Bronze Layer              Silver Layer             Go
 
 | **#** | **Notebook** | **Duration** | **Focus Area** | **Key Takeaways** |
 |-------|-------------|-------------|---------------|------------------|
-| 01 | [Platform Tour](notebooks/01_Platform_Tour.md) | 5 min | Navigation | Workspace layout, key features |
-| 02 | [Notebook Tour](notebooks/02_Notebook_Tour.ipynb) | 15 min | **Core Setup** | Complete medallion pipeline |
-| 03 | [Unity Catalog Demo](notebooks/03_Unity_Catalog_Demo.ipynb) | 5 min | Governance | Lineage, security, organization |
-| 04 | [Job Creation](notebooks/04_Job_Creation.ipynb) | 3 min | Automation | Scheduling, monitoring workflows |
-| 05 | [Delta Live Pipeline](notebooks/05_Delta_Live_Pipeline.ipynb) | 5 min | Managed ETL | Declarative pipelines, data quality |
-| 06 | [AI Agent Bricks](notebooks/06_AI_Agent_Bricks.md) | 3 min | AI/ML | Intelligent applications, RAG |
+| 00 | [Setup](notebooks/00_Setup.ipynb) | 5 min | **Data Preparation** | Download F1 data, create Volume |
+| 01 | [Platform Tour](notebooks/01_Platform_Tour.ipynb) | 5 min | Navigation | Workspace layout, key features |
+| 02 | [Notebook Tour](notebooks/02_Databricks_Notebook_Tour.ipynb) | 5 min | Basics | Learn notebook fundamentals |
+| 03 | [Medallion Architecture](notebooks/03_Medallion%20Architecture.ipynb) | 15 min | **Core Pipeline** | Complete Bronze → Silver → Gold |
+| 04 | [Unity Catalog](notebooks/04_Unity_Catalog.ipynb) | 5 min | Governance | Lineage, security, organization |
+| 05 | [Job Creation](notebooks/05_Job_Creation.ipynb) | 3 min | Automation | Scheduling, monitoring workflows |
+| 06 | [Declarative Pipeline](notebooks/06_Declarative_Pipeline.ipynb) | 5 min | Managed ETL | Declarative pipelines, data quality |
 | 07 | [SQL Editor](notebooks/07_SQL_Editor.sql) | 10 min | Analytics | Interactive queries, visualizations |
-| 08 | [Dashboard Placeholder](notebooks/08_Dashboard_Placeholder.md) | - | Reference | Dashboard templates, best practices |
-| 09 | [Genie Room](notebooks/09_Genie_Room.md) | 3 min | Natural Language | Ask questions in plain English |
-| 10 | [Databricks One](notebooks/10_Databricks_One.md) | 3 min | AI Assistant | Code help, explanations, debugging |
+| 08 | [Dashboard](notebooks/08_Formula_1_Dashboard.lvdash.json) | - | Reference | Dashboard templates, best practices |
+| 09 | [Genie Room](notebooks/09_Genie_Room.ipynb) | 3 min | Natural Language | Ask questions in plain English |
+| 10 | [Agent Bricks](notebooks/10_Agent_Bricks.ipynb) | 3 min | AI/ML | Intelligent applications, RAG |
+| 11 | [Databricks One](notebooks/11_Databricks_One.ipynb) | 3 min | Business UI | Simplified stakeholder interface |
 
-**🔥 Start with Notebook 02** - it creates all the data you'll use in other notebooks!
+**🔥 Start with Notebook 00_Setup** - it downloads and creates all the data you'll use in other notebooks!
 
 ---
 
@@ -128,15 +127,14 @@ Raw Data (Volume)          Bronze Layer              Silver Layer             Go
 
 #### **"Cannot create Volume" Error**
 ```
-Problem: Volume creation fails in notebook 02
+Problem: Volume creation fails in notebook 00_Setup
 Solution: Ensure you're using main.default catalog (trial default)
 Verify: Check catalog permissions in left sidebar → Catalog
 ```
 
-#### **"COPY INTO Failed" Error**
 ```
-Problem: CSV download or COPY INTO operation fails
-Solution: Check internet connection and retry notebook 02
+Problem: COPY INTO Failed" Error
+Solution: Check internet connection and retry notebook 00_Setup
 Alternative: Download CSVs manually to Volume via UI
 ```
 
@@ -150,8 +148,9 @@ Solution: 1. Refresh browser page
 
 #### **"Table Not Found" in Later Notebooks**
 ```
-Problem: Silver/Gold tables missing in notebooks 03-10
-Solution: Complete notebook 02 fully first (creates all tables)
+Problem: Silver/Gold tables missing in notebooks 03-11
+Solution: Complete notebook 00_Setup fully first (downloads all data)
+Alternative: Check notebook 03 creates all tables from downloaded data
 Verify: Check Data Explorer → main → default for 8 tables
 ```
 
@@ -179,7 +178,7 @@ Note: Screenshots will be added to images/ folder
 
 ### Documentation
 - 📖 [Unity Catalog Guide](https://docs.databricks.com/unity-catalog/index.html)
-- 📖 [Delta Live Tables](https://docs.databricks.com/delta-live-tables/index.html)
+- 📖 [Declarative Pipelines](https://docs.databricks.com/delta-live-tables/index.html)
 - 📖 [SQL Reference](https://docs.databricks.com/sql/index.html)
 - 📖 [Python on Databricks](https://docs.databricks.com/python/index.html)
 
