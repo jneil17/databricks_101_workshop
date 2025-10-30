@@ -4,7 +4,7 @@
 
 ## 🚀 Quick Start
 
-**[👉 Start Your Free Databricks Trial](https://login.databricks.com/signup?)**
+**[Start Your Free Databricks Trial](https://login.databricks.com/signup?)**
 
 ### 3-Step Setup
 1. **Sign up** for Databricks trial (no credit card required)
