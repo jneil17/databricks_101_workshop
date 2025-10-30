@@ -2,7 +2,7 @@
 
 ## Overview
 
-This pipeline ingests and processes Formula 1 sprint qualifying results data using Databricks Delta Live Tables (DLT) with streaming CDC (Change Data Capture).
+This pipeline ingests and processes Formula 1 sprint qualifying results data using Databricks Declarative Pipelines with streaming CDC (Change Data Capture).
 
 ## Pipeline Architecture
 
@@ -35,4 +35,4 @@ This pipeline ingests and processes Formula 1 sprint qualifying results data usi
 
 ## Usage
 
-Run this pipeline in a Databricks DLT workflow to continuously process sprint qualifying data as new files arrive in the source location.
+Run this pipeline in a Databricks Declarative Pipeline workflow to continuously process sprint qualifying data as new files arrive in the source location.
