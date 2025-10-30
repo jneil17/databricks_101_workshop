@@ -8,8 +8,38 @@
 
 ### 3-Step Setup
 1. **Sign up** for Databricks trial (no credit card required)
-2. **Clone** this repository into your workspace
+2. **Clone** this repository into your workspace (see detailed steps below)
 3. **Run** the notebooks in order (00-11)
+
+---
+
+## 📂 How to Clone This Repository
+
+### Step 1: Copy the GitHub Repository URL
+1. **Click the green "Code" button** on this GitHub repository
+2. **Copy the repository URL** to your clipboard
+
+![Copy Github clone link.png](notebooks/Images/Copy%20Github%20clone%20link.png "Copy Github clone link.png")
+
+### Step 2: Access Your Databricks Workspace
+1. **Open your Databricks workspace** in your browser
+2. **Navigate to the Workspace section** in the left sidebar
+
+![Open Workspace.png](notebooks/Images/Open%20Workspace.png "Open Workspace.png")
+
+### Step 3: Create Git Folder
+1. **Right-click in your workspace** or click the dropdown menu
+2. **Select "Create" → "Git folder"**
+
+![Create Git Folder.png](notebooks/Images/Create%20Git%20Folder.png "Create Git Folder.png")
+
+### Step 4: Paste Repository URL
+1. **Paste the GitHub repository URL** you copied in Step 1
+2. **Click "Clone"** to import the workshop notebooks
+
+![Paste the Github Link into the Github Folder.png](notebooks/Images/Paste%20the%20Github%20Link%20into%20the%20Github%20Folder.png "Paste the Github Link into the Github Folder.png")
+
+**🎉 You're ready to start the workshop!** Navigate to `00_Setup.ipynb` to begin.
 
 ---
 
