@@ -18,7 +18,7 @@
 SELECT
   driver,
   SUM(points) AS points
-FROM main.default.bronze_race_results
+FROM main.default.f1_bronze_race_results
 GROUP BY driver
 ORDER BY points DESC
 LIMIT 10;

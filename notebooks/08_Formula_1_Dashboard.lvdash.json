@@ -6,7 +6,7 @@
       "queryLines": [
         "select\n",
         "*\n",
-        "from main.default.gold_team_championship"
+        "from main.default.f1_gold_team_championship"
       ]
     },
     {
@@ -15,7 +15,7 @@
       "queryLines": [
         "select\n",
         "*\n",
-        "from main.default.gold_driver_championship"
+        "from main.default.f1_gold_driver_championship"
       ]
     }
   ],
