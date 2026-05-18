@@ -223,17 +223,7 @@ Note: Screenshots will be added to images/ folder
 
 ## 📝 Changelog
 
-### May 2026
-- **Data refresh:** swapped all notebooks from the 2025 to the 2026 F1 season.
-- **Lakeflow Designer** (no-code ETL with live previews) replaces the old Declarative Pipeline notebook.
-- **Dashboard Builder** notebook added — uses a single Genie Code prompt to build the F1 dashboard end-to-end. Pre-baked dashboard JSON kept as a fallback.
-- **Genie Room** rewritten as a one-shot setup prompt that names the space, writes instructions, seeds sample questions, and adds trusted SQL — all in a single paste.
-- **Agent Bricks removed** — the product changed too much (no custom LLM, no knowledge assistant) to be a useful demo for a 45-min workshop.
-- **SQL Editor notebook removed** — the SQL editor is now referenced inline in the Genie and Dashboard sections.
-- **Genie:** mobile-app section added, renumbered from 11 to 10.
-- **00_Setup:** added a catalog-override section with a Genie Code prompt for users who can't use the `main` catalog.
-- **03_Medallion Architecture:** added an ASCII architecture diagram at the top so attendees see the end state before running code.
-- **02_Notebook Tour:** added a section pointing out the Genie/Assistant entry points in the notebook UI.
+- **May 2026** — refreshed for the 2026 F1 season; covers Lakeflow Designer, Dashboards via Genie Code, and the Genie business-user UI.
 
 ---
 
