@@ -9,7 +9,7 @@
 ### 3-Step Setup
 1. **Sign up** for Databricks trial (no credit card required)
 2. **Clone** this repository into your workspace (see detailed steps below)
-3. **Run** the notebooks in order (00-11)
+3. **Run** the notebooks in order (00-10)
 
 ---
 
@@ -180,7 +180,7 @@ Solution: 1. Refresh browser page
 
 #### **"Table Not Found" in Later Notebooks**
 ```
-Problem: Silver/Gold tables missing in notebooks 03-11
+Problem: Silver/Gold tables missing in notebooks 03-10
 Solution: Complete notebook 00_Setup fully first (downloads all data)
 Alternative: Check notebook 03 creates all tables from downloaded data
 Verify: Check Data Explorer → main → default for 8 tables
@@ -218,6 +218,22 @@ Note: Screenshots will be added to images/ folder
 - 🌐 [Data + AI Summit](https://databricks.com/dataaisummit/) (Annual conference)
 - 🌐 [User Groups](https://databricks.com/company/events/user-groups) (Local meetups)
 - 🌐 [Databricks Blog](https://databricks.com/blog) (Latest updates)
+
+---
+
+## 📝 Changelog
+
+### May 2026
+- **Data refresh:** swapped all notebooks from the 2025 to the 2026 F1 season.
+- **Lakeflow Designer** (no-code ETL with live previews) replaces the old Declarative Pipeline notebook.
+- **Dashboard Builder** notebook added — uses a single Genie Code prompt to build the F1 dashboard end-to-end. Pre-baked dashboard JSON kept as a fallback.
+- **Genie Room** rewritten as a one-shot setup prompt that names the space, writes instructions, seeds sample questions, and adds trusted SQL — all in a single paste.
+- **Agent Bricks removed** — the product changed too much (no custom LLM, no knowledge assistant) to be a useful demo for a 45-min workshop.
+- **SQL Editor notebook removed** — the SQL editor is now referenced inline in the Genie and Dashboard sections.
+- **Databricks One:** mobile-app section added, renumbered from 11 to 10.
+- **00_Setup:** added a catalog-override section with a Genie Code prompt for users who can't use the `main` catalog.
+- **03_Medallion Architecture:** added an ASCII architecture diagram at the top so attendees see the end state before running code.
+- **02_Notebook Tour:** added a section pointing out the Genie/Assistant entry points in the notebook UI.
 
 ---
 
