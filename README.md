@@ -76,9 +76,9 @@
 
 ### Advanced Features
 - ✅ Unity Catalog for governance and lineage tracking
-- ✅ Declarative Pipelines for managed ETL pipelines
-- ✅ SQL Editor for analytics and visualization
-- ✅ AI-powered features (Genie, Databricks Assistant)
+- ✅ Lakeflow Designer for no-code ETL with live previews
+- ✅ Dashboards built end-to-end with Genie Code
+- ✅ AI-powered features (Genie spaces, Databricks Assistant)
 
 ### Real-World Patterns
 - ✅ Serverless compute for cost efficiency
@@ -104,16 +104,15 @@
 |-------|-------------|-------------|---------------|------------------|
 | 00 | [Setup](notebooks/00_Setup.ipynb) | 5 min | **Data Preparation** | Download F1 data, create Volume |
 | 01 | [Platform Tour](notebooks/01_Platform_Tour.ipynb) | 5 min | Navigation | Workspace layout, key features |
-| 02 | [Notebook Tour](notebooks/02_Databricks_Notebook_Tour.ipynb) | 5 min | Basics | Learn notebook fundamentals |
+| 02 | [Notebook Tour](notebooks/02_Databricks_Notebook_Tour.ipynb) | 5 min | Basics | Notebook fundamentals + Genie hooks |
 | 03 | [Medallion Architecture](notebooks/03_Medallion%20Architecture.ipynb) | 15 min | **Core Pipeline** | Complete Bronze → Silver → Gold |
 | 04 | [Unity Catalog](notebooks/04_Unity_Catalog.ipynb) | 5 min | Governance | Lineage, security, organization |
 | 05 | [Job Creation](notebooks/05_Job_Creation.ipynb) | 3 min | Automation | Scheduling, monitoring workflows |
-| 06 | [Declarative Pipeline](notebooks/06_Declarative_Pipeline.ipynb) | 5 min | Managed ETL | Declarative pipelines, data quality |
-| 07 | [SQL Editor](notebooks/07_SQL_Editor.sql) | 10 min | Analytics | Interactive queries, visualizations |
-| 08 | [Dashboard](notebooks/08_Formula_1_Dashboard.lvdash.json) | - | Reference | Dashboard templates, best practices |
-| 09 | [Genie Room](notebooks/09_Genie_Room.ipynb) | 3 min | Natural Language | Ask questions in plain English |
-| 10 | [Agent Bricks](notebooks/10_Agent_Bricks.ipynb) | 3 min | AI/ML | Intelligent applications, RAG |
-| 11 | [Databricks One](notebooks/11_Databricks_One.ipynb) | 3 min | Business UI | Simplified stakeholder interface |
+| 06 | [Lakeflow Designer](notebooks/06_Lakeflow_Designer.ipynb) | 5 min | No-code ETL | Visual pipeline builder, live previews |
+| 07 | [Dashboard Builder](notebooks/07_Dashboard_Builder.ipynb) | 5 min | BI | Build the F1 dashboard via Genie Code |
+| 08 | [Dashboard (reference)](notebooks/08_Formula_1_Dashboard.lvdash.json) | - | Reference | Pre-baked dashboard JSON to import |
+| 09 | [Genie Room](notebooks/09_Genie_Room.ipynb) | 5 min | Natural Language | One-shot Genie space setup |
+| 10 | [Databricks One](notebooks/10_Databricks_One.ipynb) | 3 min | Business UI | Simplified stakeholder interface |
 
 **🔥 Start with Notebook 00_Setup** - it downloads and creates all the data you'll use in other notebooks!
 
@@ -155,10 +154,12 @@
 
 ### Common Issues & Solutions
 
-#### **"Cannot create Volume" Error**
+#### **"Cannot create Volume" / "Cannot create Catalog" Error**
 ```
-Problem: Volume creation fails in notebook 00_Setup
-Solution: Ensure you're using main.default catalog (trial default)
+Problem: Volume or catalog creation fails in notebook 00_Setup
+Solution: If you can't use the `main` catalog, use the catalog override
+          markdown cell in 00_Setup — paste the Genie Code prompt to
+          rewrite every notebook to use a catalog you DO have access to.
 Verify: Check catalog permissions in left sidebar → Catalog
 ```
 
@@ -208,7 +209,7 @@ Note: Screenshots will be added to images/ folder
 
 ### Documentation
 - 📖 [Unity Catalog Guide](https://docs.databricks.com/unity-catalog/index.html)
-- 📖 [Declarative Pipelines](https://docs.databricks.com/delta-live-tables/index.html)
+- 📖 [Lakeflow Pipelines](https://docs.databricks.com/lakeflow/index.html)
 - 📖 [SQL Reference](https://docs.databricks.com/sql/index.html)
 - 📖 [Python on Databricks](https://docs.databricks.com/python/index.html)
 
@@ -241,4 +242,4 @@ This workshop is provided for **educational use only**.
 
 **Built with ❤️ for the Databricks community**
 
-*Last updated: October 2025*
+*Last updated: May 2026*
