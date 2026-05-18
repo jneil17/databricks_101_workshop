@@ -56,7 +56,7 @@
 * **📊 Interactive Dashboards** - Visual F1 analytics and race insights
 * **🤖 AI Features** - Natural language queries and intelligent applications
 
-**All built using real Formula 1 data from 1950-2023 seasons!**
+**All built using real Formula 1 data from the 2026 season!**
 
 ---
 
@@ -142,11 +142,12 @@
 **Formula 1 Datasets:** https://github.com/toUpperCase78/formula1-datasets
 
 ### Files Used
-- `races.csv` - Race information (circuits, dates, rounds)
-- `drivers.csv` - Driver profiles (names, nationalities, DOB)
-- `results.csv` - Race results (positions, points, lap times)
+- `Formula1_2026Season_RaceResults.csv` — race results (track, position, driver, team, points, fastest lap)
+- `Formula1_2026Season_QualifyingResults.csv` — qualifying (Q1/Q2/Q3 times by driver)
+- `Formula1_2026Season_SprintQualifyingResults.csv` — sprint qualifying (used in the streaming volume example)
+- `Formula1_2026Season_SprintResults.csv` — sprint race results
 
-*Data covers F1 seasons from 1950-2023 with ~25,000 race results*
+*Data covers the current 2026 F1 season.*
 
 ---
 
