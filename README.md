@@ -78,7 +78,7 @@
 - ✅ Unity Catalog for governance and lineage tracking
 - ✅ Lakeflow Designer for no-code ETL with live previews
 - ✅ Dashboards built end-to-end with Genie Code
-- ✅ AI-powered features (Genie spaces, Databricks Assistant)
+- ✅ AI-powered features (Genie spaces, Genie Code)
 
 ### Real-World Patterns
 - ✅ Serverless compute for cost efficiency
@@ -112,7 +112,7 @@
 | 07 | [Dashboard Builder](notebooks/07_Dashboard_Builder.ipynb) | 5 min | BI | Build the F1 dashboard via Genie Code |
 | 08 | [Dashboard (reference)](notebooks/08_Formula_1_Dashboard.lvdash.json) | - | Reference | Pre-baked dashboard JSON to import |
 | 09 | [Genie Room](notebooks/09_Genie_Room.ipynb) | 5 min | Natural Language | One-shot Genie space setup |
-| 10 | [Databricks One](notebooks/10_Databricks_One.ipynb) | 3 min | Business UI | Simplified stakeholder interface |
+| 10 | [Genie](notebooks/10_Genie.ipynb) | 3 min | Business UI | Simplified stakeholder interface |
 
 **🔥 Start with Notebook 00_Setup** - it downloads and creates all the data you'll use in other notebooks!
 
@@ -230,7 +230,7 @@ Note: Screenshots will be added to images/ folder
 - **Genie Room** rewritten as a one-shot setup prompt that names the space, writes instructions, seeds sample questions, and adds trusted SQL — all in a single paste.
 - **Agent Bricks removed** — the product changed too much (no custom LLM, no knowledge assistant) to be a useful demo for a 45-min workshop.
 - **SQL Editor notebook removed** — the SQL editor is now referenced inline in the Genie and Dashboard sections.
-- **Databricks One:** mobile-app section added, renumbered from 11 to 10.
+- **Genie:** mobile-app section added, renumbered from 11 to 10.
 - **00_Setup:** added a catalog-override section with a Genie Code prompt for users who can't use the `main` catalog.
 - **03_Medallion Architecture:** added an ASCII architecture diagram at the top so attendees see the end state before running code.
 - **02_Notebook Tour:** added a section pointing out the Genie/Assistant entry points in the notebook UI.
